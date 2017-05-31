@@ -1,6 +1,6 @@
 # libzengithub - an example how to build portable [conan.io](https://www.conan.io/) C/C++ packages
 
-libzengithub prints out a random [Zen of Github](http://ben.balter.com/2015/08/12/the-zen-of-github/) whenever you call its only function.
+```libzengithub``` prints out a random [Zen of Github](http://ben.balter.com/2015/08/12/the-zen-of-github/) whenever you call its only function.
 
 ```c
 #include <zengithub.h>
@@ -151,5 +151,5 @@ conan remote add <your conan remote> <conan.io, artifactory or bintray url>
 ```
 
 ```
-conan upload libzengithub/1.0@jonico/stable --all -r=<your conan remote>
+conan upload ZenGitHub/1.0@jonico/stable --all -r=<your conan remote>
 ```
