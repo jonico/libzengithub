@@ -142,6 +142,33 @@ If you still like to build, test and install ```libzengithub``` directly, clone 
 conan test_package
 ```
 
+If tests run through successfully, a picture like this should appear
+
+```
+
+               MMM.           .MMM
+               MMMMMMMMMMMMMMMMMMM
+               MMMMMMMMMMMMMMMMMMM      _____________________
+              MMMMMMMMMMMMMMMMMMMMM    |                     |
+             MMMMMMMMMMMMMMMMMMMMMMM   | Design for failure. |
+            MMMMMMMMMMMMMMMMMMMMMMMM   |_   _________________|
+            MMMM::- -:::::::- -::MMMM    |/
+             MM~:~ 00~:::::~ 00~:~MM
+        .. MMMMM::.00:::+:::.00::MMMMM ..
+              .MM::::: ._. :::::MM.
+                 MMMM;:::::;MMMM
+          -MM        MMMMMMM
+          ^  M+     MMMMMMMMM
+              MMMMMMM MM MM MM
+                   MM MM MM MM
+                   MM MM MM MM
+                .~~MM~MM~MM~MM~~.
+             ~~~~MM:~MM~~~MM~:MM~~~~
+            ~~~~~~==~==~~~==~==~~~~~~
+             ~~~~~~==~==~==~==~~~~~~
+                 :~==~==~==~==~~
+```
+
 ## Upload packages to your own conan.io server
 
 First of all, [configure the remote](http://conanio.readthedocs.io/en/latest/reference/commands/remote.html) to your local conan.io server.
@@ -153,3 +180,6 @@ conan remote add <your conan remote> <conan.io, artifactory or bintray url>
 ```
 conan upload ZenGitHub/1.0@jonico/stable --all -r=<your conan remote>
 ```
+
+
+Enjoy :octocat::heart:
