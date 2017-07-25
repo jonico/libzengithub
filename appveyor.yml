@@ -5,9 +5,9 @@ environment:
     PYTHON_VERSION: "2.7.8"
     PYTHON_ARCH: "32"
 
-    CONAN_REFERENCE: "zlib/1.2.8"
+    CONAN_REFERENCE: "ZenGitHub/1.0"
     CONAN_USERNAME: "conan"
-    CONAN_LOGIN_USERNAME: "lasote"
+    CONAN_LOGIN_USERNAME: "jonico"
     CONAN_CHANNEL: "stable"
     VS150COMNTOOLS: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\"
     CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
