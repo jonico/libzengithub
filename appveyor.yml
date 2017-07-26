@@ -11,7 +11,7 @@ environment:
     CONAN_CHANNEL: "stable"
     VS150COMNTOOLS: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\"
     # CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
-    CONAN_UPLOAD: "https://api.bintray.com/conan/conan-community/conan"
+    CONAN_UPLOAD: "https://server.conan.io"
     CONAN_STABLE_BRANCH_PATTERN: "release/*"
 
     matrix:

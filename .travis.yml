@@ -6,7 +6,7 @@ env:
      - CONAN_LOGIN_USERNAME: "jonico"
      - CONAN_CHANNEL: "testing"
      #- CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
-     - CONAN_UPLOAD: https://api.bintray.com/conan/conan-community/conan
+     - CONAN_UPLOAD: "https://server.conan.io"
      - CONAN_STABLE_BRANCH_PATTERN: "release/*"
 
 linux: &linux
