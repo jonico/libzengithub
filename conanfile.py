@@ -12,7 +12,7 @@ class ZenGithubConan(ConanFile):
     default_options = "shared=False"
     generators = "cmake"
     exports_sources = "zengithub/*"
-    requires = "libcurl/7.50.3@lasote/stable", "zlib/1.2.8@conan/stable"
+    requires = "libcurl/7.50.3@lasote/stable", "zlib/1.2.8@conan/stable", "OpenSSL/1.0.2i@conan/stable"
 
     def build(self):
         cmake = CMake(self)
