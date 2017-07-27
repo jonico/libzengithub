@@ -15,13 +15,13 @@ environment:
     CONAN_STABLE_BRANCH_PATTERN: "release/*"
 
     matrix:
-        - MINGW_CONFIGURATIONS: "4.9@x86_64@seh@posix, 4.9@x86_64@sjlj@posix, 4.9@x86@sjlj@posix, 4.9@x86@dwarf2@posix"
+        #- MINGW_CONFIGURATIONS: "4.9@x86_64@seh@posix, 4.9@x86_64@sjlj@posix, 4.9@x86@sjlj@posix, 4.9@x86@dwarf2@posix"
         - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
           CONAN_VISUAL_VERSIONS: 12
         - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
           CONAN_VISUAL_VERSIONS: 14
-        - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-          CONAN_VISUAL_VERSIONS: 15
+        #- APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+        #  CONAN_VISUAL_VERSIONS: 15
 
 install:
   - set PATH=%PATH%;%PYTHON%/Scripts/
