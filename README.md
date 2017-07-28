@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/jonico/libzengithub.svg)](https://travis-ci.org/jonico/libzengithub)
+[![Build Status](https://ci.appveyor.com/api/projects/status/github/jonico/libzengithub)](https://ci.appveyor.com/project/jonico/libzengithub)
+
 # libzengithub - an example how to build portable [conan.io](https://www.conan.io/) C/C++ packages
 
 ```libzengithub``` prints out a random [Zen of Github](http://ben.balter.com/2015/08/12/the-zen-of-github/) whenever you call its only function.
