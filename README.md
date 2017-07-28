@@ -134,6 +134,24 @@ conan install .
 
 Project setup installs the library (and all his dependencies) and generates the files *conanbuildinfo.txt* and *conanbuildinfo.cmake* with all the paths and variables that you need to link with your dependencies.
 
+# Automatic builds of libzengithub 
+
+I was following https://github.com/conan-io/conan-package-tools to provide a range of different operating system, compiler version, debug and release builds for this library.
+
+I am using [Travis CI](https://github.com/jonico/libzengithub/blob/master/.travis.yml) for Linux and Mac builds and [AppVeyor](https://github.com/jonico/libzengithub/blob/master/appveyor.yml) for Windows builds.
+
+I had to exclude certain platforms as ```libcurl``` and OpenSSL packages were not built for all possible mutations. Packages are uploaded to https://api.bintray.com/conan/conan-jonico/libzengithub
+
+Here are the results:
+
+```
+conan search ZenGitHub/1.0@jonico/stable -r=conan --table build_matrix.html
+open build_matrix.html
+```
+
+![image](https://user-images.githubusercontent.com/1872314/28708619-246fbe24-737d-11e7-92f1-ac8d5e149756.png)
+
+
 # Building, testing and installing locally
 
 If you are a consumer of ```libzengithub```, you would not need to build this package by yourself but get it as part of your consumer build or pre-built from [my conan.io repo](https://api.bintray.com/conan/conan-jonico/libzengithub)
