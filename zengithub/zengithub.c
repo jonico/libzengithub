@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #include <curl/curl.h>
-#ifndef __APPLE__
-#include "openssl/md5.h"
-#include "openssl/crypto.h"
-#endif
 #include "zengithub.h"
 
 struct MemoryStruct {
