@@ -72,7 +72,7 @@ conan info . --graph deps.html
 open deps.html
 ```
 
-![image](https://user-images.githubusercontent.com/1872314/38522143-fca240e4-3c47-11e8-8d5f-8caec7541a59.png)
+![image](https://user-images.githubusercontent.com/1872314/38522318-7e0c76a4-3c48-11e8-90f3-5ac2f6533a94.png)
 
 and automatically downloads the packages it depends upon from the conan repository. If it should find pre-built packages for the dependencies, it will build them locally.
 
