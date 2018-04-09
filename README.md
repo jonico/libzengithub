@@ -112,18 +112,18 @@ conan install ZenGitHub/1.0@jonico/stable -o ZenGitHub:shared=True --build missi
 If you handle multiple dependencies in your project is better to add a [conanfile.txt](https://github.com/jonico/zenofgithub/blob/master/conanfile.txt)
 
 ```
-    [requires]
+[requires]
     ZenGitHub/1.0@jonico/stable
 
-    [options]
+[options]
     ZenGitHub:shared=False # True
     
-    [generators]
+[generators]
     cmake
 
-    [imports]
-bin, *.dll -> ./bin # Copies all dll files from packages bin folder to my "bin" folder
-lib, *.dylib* -> ./bin # Copies all dylib files from packages lib folder to my "bin" folder
+[imports]
+    bin, *.dll -> ./bin # Copies all dll files from packages bin folder to my "bin" folder
+    lib, *.dylib* -> ./bin # Copies all dylib files from packages lib folder to my "bin" folder
 ```
 
 Complete the installation of requirements for your project running:</small></span>
@@ -160,7 +160,8 @@ Checkout [zenofgithub](https://github.com/jonico/zenofgithub) for an example app
 If you still like to build, test and install ```libzengithub``` directly, clone this repository, [get the conan CLI](http://docs.conan.io/en/latest/installation.html) and run
 
 ```
-conan test_package
+conan create . jonico/testing
+conan export . ZenGitHub/1.0@jonico/stable
 ```
 
 If tests run through successfully, a picture like this should appear
