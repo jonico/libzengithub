@@ -1,5 +1,4 @@
-from conans import ConanFile, CMake, tools
-import os
+from conans import ConanFile, CMake
 
 
 class ZenGithubConan(ConanFile):
@@ -12,13 +11,15 @@ class ZenGithubConan(ConanFile):
     default_options = "shared=False"
     generators = "cmake"
     exports_sources = "zengithub/*"
-    requires = "libcurl/7.50.3@lasote/stable", "zlib/1.2.8@conan/stable"
+    requires = "libcurl/7.50.3@bincrafters/stable"
+
+    def configure(self):
+        del self.settings.compiler.libcxx
 
     def build(self):
         cmake = CMake(self)
-        shared = "-DBUILD_SHARED_LIBS=ON" if self.options.shared else ""
-        self.run('cmake zengithub %s %s' % (cmake.command_line, shared))
-        self.run("cmake --build . %s" % cmake.build_config)
+        cmake.configure(source_folder="zengithub")
+        cmake.build()
 
     def package(self):
         self.copy("*.h", dst="include", src="zengithub")
