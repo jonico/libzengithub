@@ -23,7 +23,7 @@ strategy:
       python-version: "x"
     windows-vs2019:
       imageName: 'windows-2019'
-      vs-version: 16
+      vs-version: "15"
       python-arch: "x86"
       python-version: "2.7.x"
     windows-vs2017:
