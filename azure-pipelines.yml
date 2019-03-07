@@ -1,0 +1,25 @@
+# C/C++ with GCC
+# Build your C/C++ project with GCC using make.
+# Add steps that publish test results, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/c-cpp/gcc
+
+trigger:
+- master
+
+pool:
+  vmImage: vs2017-win2016
+
+steps:
+  - script: pip install conan
+    displayName: Installing Conan
+  - script: mkdir build
+    displayName: Generating the build folder
+  - script: cmake .. -A x64
+    workingDirectory: build
+    displayName: Generating the solution
+  - script: cmake --build .
+    workingDirectory: build
+    displayName: Building the solution
+  - script: ctest -C Debug
+    workingDirectory: build
+    displayName: Run the tests
