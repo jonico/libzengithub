@@ -1,0 +1,37 @@
+# C/C++ with GCC
+# Build your C/C++ project with GCC using make.
+# Add steps that publish test results, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/c-cpp/gcc
+
+trigger:
+- master
+
+variables:
+    PYTHON_ARCH: "32"
+    CONAN_REFERENCE: "ZenGitHub/1.0"
+    CONAN_USERNAME: "jonico"
+    CONAN_LOGIN_USERNAME: "jonico"
+    CONAN_CHANNEL: "stable"
+    CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
+    CONAN_STABLE_BRANCH_PATTERN: "release/*"
+    VS150COMNTOOLS: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\"
+    CONAN_VISUAL_VERSIONS: 15
+
+pool:
+  vmImage: vs2017-win2016
+  
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '2.7.x' 
+      addToPath: true 
+      architecture: 'x86' # Options: x86, x64 (this argument applies only on Windows agents)
+  - script: pip install conan
+    displayName: Installing Conan
+  - script: pip install conan_package_tools
+    displayName: Installing Conan package tools
+  - script: conan user
+    displayName: Generating conan data directory
+  - script: python build.py
+    displayName: Building the solution
