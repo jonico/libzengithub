@@ -60,7 +60,7 @@ steps:
       architecture: $(python-arch)
   - script: sudo apt-get install -y g++-multilib
     displayName: Installing C/C++ header files
-    condition: eq($(INSTALL_HEADERFILES), true)
+    condition: eq(install-headerfiles, true)
   - script: pip install conan
     displayName: Installing Conan
   - script: pip install conan_package_tools
