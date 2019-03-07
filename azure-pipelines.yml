@@ -6,6 +6,14 @@
 trigger:
 - master
 
+variables:
+    CONAN_REFERENCE: "ZenGitHub/1.0"
+    CONAN_USERNAME: "jonico"
+    CONAN_LOGIN_USERNAME: "jonico"
+    CONAN_CHANNEL: "stable"
+    CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
+    CONAN_STABLE_BRANCH_PATTERN: "release/*"
+
 pool:
   vmImage: vs2017-win2016
 
@@ -16,5 +24,5 @@ steps:
     displayName: Installing Conan package tools
   - script: conan user
     displayName: Generating conan data directory
-  - script: python build.ppy
+  - script: python build.py
     displayName: Building the solution
