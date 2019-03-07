@@ -17,8 +17,14 @@ variables:
 
 pool:
   vmImage: vs2017-win2016
+  
 
 steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '2.7.x' 
+      addToPath: true 
+      architecture: 'x86' # Options: x86, x64 (this argument applies only on Windows agents)
   - script: pip install conan
     displayName: Installing Conan
   - script: pip install conan_package_tools
