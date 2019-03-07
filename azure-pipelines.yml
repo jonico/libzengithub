@@ -15,6 +15,7 @@ variables:
     CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
     CONAN_STABLE_BRANCH_PATTERN: "release/*"
     VS150COMNTOOLS: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\"
+    CONAN_VISUAL_VERSIONS: 15
 
 pool:
   vmImage: vs2017-win2016
