@@ -7,6 +7,7 @@ trigger:
 - master
 
 variables:
+    PYTHON_ARCH: "32"
     CONAN_REFERENCE: "ZenGitHub/1.0"
     CONAN_USERNAME: "jonico"
     CONAN_LOGIN_USERNAME: "jonico"
