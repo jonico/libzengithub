@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/jonico/libzengithub.svg)](https://travis-ci.org/jonico/libzengithub)
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/jonico/libzengithub)](https://ci.appveyor.com/project/jonico/libzengithub)
+[![Build Status](https://dev.azure.com/nicolaijohannes/nicolaijohannes/_apis/build/status/jonico.libzengithub?branchName=master)](https://dev.azure.com/nicolaijohannes/nicolaijohannes/_build/latest?definitionId=3&branchName=master)
 
 # libzengithub - an example how to build portable [conan.io](https://www.conan.io/) C/C++ packages
 
