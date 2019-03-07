@@ -46,7 +46,7 @@ steps:
       versionSpec: $(python-version)
       addToPath: true 
       architecture: $(python-arch)
-  - script: sudo apt-get install -y libc6-dev
+  - script: sudo apt-get install -y libc6 libc6-dev
     displayName: Installing C/C++ header files
     condition: eq(variables.INSTALL_HEADERFILES, true)
   - script: pip install conan
