@@ -10,23 +10,32 @@ strategy:
   matrix:
     linux:
       imageName: 'ubuntu-16.04'
+      python-arch: "x64"
+      python-version: "3.6.x"
     mac:
       imageName: 'macos-10.13'
+      python-arch: "x64"
+      python-version: "3.6.x"
     windows-vs2015:
       imageName: 'vs2015-win2012r2'
       vs-version: 12
-    windows-vs2017:
+      python-arch: "x86"
+      python-version: "x"
+    windows-vs2019:
       imageName: 'windows-2019'
       vs-version: 16
-    windows-vs2019:
+      python-arch: "x86"
+      python-version: "2.7.x"
+    windows-vs2017:
       imageName: 'vs2017-win2016'
       vs-version: 15
+      python-arch: "x86"
+      python-version: "2.7.x" 
 
 pool:
   vmImage: $(imageName)
 
 variables:
-    PYTHON_ARCH: "32"
     CONAN_REFERENCE: "ZenGitHub/1.0"
     CONAN_USERNAME: "jonico"
     CONAN_LOGIN_USERNAME: "jonico"
@@ -39,9 +48,9 @@ variables:
 steps:
   - task: UsePythonVersion@0
     inputs:
-      versionSpec: '2.7.x' 
+      versionSpec: $(python-version)
       addToPath: true 
-      architecture: 'x86' # Options: x86, x64 (this argument applies only on Windows agents)
+      architecture: $(python-arch)
   - script: pip install conan
     displayName: Installing Conan
   - script: pip install conan_package_tools
