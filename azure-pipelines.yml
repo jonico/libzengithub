@@ -12,14 +12,9 @@ pool:
 steps:
   - script: pip install conan
     displayName: Installing Conan
-  - script: mkdir build
-    displayName: Generating the build folder
-  - script: cmake .. -A x64
-    workingDirectory: build
-    displayName: Generating the solution
-  - script: cmake --build .
-    workingDirectory: build
+  - script: pip install conan_package_tools
+    displayName: Installing Conan package tools
+  - script: conan user
+    displayName: Generating conan data directory
+  - script: python build.ppy
     displayName: Building the solution
-  - script: ctest -C Debug
-    workingDirectory: build
-    displayName: Run the tests
