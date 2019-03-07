@@ -18,19 +18,7 @@ strategy:
       python-arch: "x64"
       python-version: "3.6.x"
       install-headerfiles : false
-    windows-vs2015:
-      imageName: 'vs2015-win2012r2'
-      vs-version: 12
-      python-arch: "x86"
-      python-version: "x"
-      install-headerfiles : false
-    windows-vs2019:
-      imageName: 'windows-2019'
-      vs-version: "15"
-      python-arch: "x86"
-      python-version: "2.7.x"
-      install-headerfiles : false
-    windows-vs2017:
+    windows:
       imageName: 'vs2017-win2016'
       vs-version: 15
       python-arch: "x86"
@@ -58,7 +46,7 @@ steps:
       versionSpec: $(python-version)
       addToPath: true 
       architecture: $(python-arch)
-  - script: sudo apt-get install -y g++-multilib
+  - script: sudo apt-get install -y libc6-dev
     displayName: Installing C/C++ header files
     condition: eq(variables.INSTALL_HEADERFILES, true)
   - script: pip install conan
