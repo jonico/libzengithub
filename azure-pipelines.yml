@@ -12,25 +12,30 @@ strategy:
       imageName: 'ubuntu-16.04'
       python-arch: "x64"
       python-version: "3.6.x"
+      install-headerfiles : true
     mac:
       imageName: 'macos-10.13'
       python-arch: "x64"
       python-version: "3.6.x"
+      install-headerfiles : false
     windows-vs2015:
       imageName: 'vs2015-win2012r2'
       vs-version: 12
       python-arch: "x86"
       python-version: "x"
+      install-headerfiles : false
     windows-vs2019:
       imageName: 'windows-2019'
       vs-version: "15"
       python-arch: "x86"
       python-version: "2.7.x"
+      install-headerfiles : false
     windows-vs2017:
       imageName: 'vs2017-win2016'
       vs-version: 15
       python-arch: "x86"
       python-version: "2.7.x" 
+      install-headerfiles : false
 
 pool:
   vmImage: $(imageName)
@@ -45,6 +50,7 @@ variables:
     CONAN_VISUAL_VERSIONS: $(vs-version)
     CONAN_APPLE_CLANG_VERSIONS: "9.1"
     CONAN_GCC_VERSIONS: "5"
+    INSTALL_HEADERFILES: $(install-headerfiles)
 
 steps:
   - task: UsePythonVersion@0
@@ -52,6 +58,9 @@ steps:
       versionSpec: $(python-version)
       addToPath: true 
       architecture: $(python-arch)
+  - script: sudo apt-get install -y g++-multilib
+    displayName: Installing C/C++ header files
+    condition: eq(INSTALL_HEADERFILES, true)
   - script: pip install conan
     displayName: Installing Conan
   - script: pip install conan_package_tools
