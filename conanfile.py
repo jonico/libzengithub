@@ -11,7 +11,7 @@ class ZenGithubConan(ConanFile):
     default_options = "shared=False"
     generators = "cmake"
     exports_sources = "zengithub/*"
-    requires = "libcurl/7.50.3@bincrafters/stable"
+    requires = "libcurl/7.64.1@bincrafters/stable"
 
     def configure(self):
         del self.settings.compiler.libcxx
