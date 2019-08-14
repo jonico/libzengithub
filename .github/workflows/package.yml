@@ -12,7 +12,7 @@ jobs:
             install-headerfiles : true
           - os: macOS-10.14
             python-arch: "x64"
-            python-version: "3.6.x" 
+            python-version: "3.x" 
             install-headerfiles : false
           - os: windows-2016
             vs-version: 15
