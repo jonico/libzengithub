@@ -11,10 +11,12 @@ jobs:
             python-arch: "x64"
             python-version: "3.6.x" 
             install-headerfiles: true
+            gcc-version: "5"
           - os: ubuntu-18.04
             python-arch: "x64"
             python-version: "3.6.x" 
             install-headerfiles: true
+            gcc-version: "7"
           - os: macOS-10.14
             python-arch: "x64"
             python-version: "3.6.x" 
@@ -60,4 +62,4 @@ jobs:
         CONAN_STABLE_BRANCH_PATTERN: "release/*"
         CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
         CONAN_APPLE_CLANG_VERSIONS: "10.0"
-        CONAN_GCC_VERSIONS: "5"
+        CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
