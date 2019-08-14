@@ -18,7 +18,6 @@ jobs:
           python-arch: "x86"
           python-version: "2.7.x" 
           install-headerfiles : false
-
   runs-on: ${{ matrix.os }}
   steps:
   - uses: actions/checkout@master
@@ -50,4 +49,3 @@ jobs:
       CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
       CONAN_APPLE_CLANG_VERSIONS: "10.0"
       CONAN_GCC_VERSIONS: "5"
-        
