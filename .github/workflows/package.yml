@@ -3,22 +3,23 @@ on: [push]
 jobs:
   test:
     strategy:
+      fail-fast: false
       matrix:
         os: [macOS-10.14, windows-2016, ubuntu-16.04]
         include:
           - os: ubuntu-16.04
             python-arch: "x64"
             python-version: "3.6.x" 
-            install-headerfiles : true
+            install-headerfiles: true
           - os: macOS-10.14
             python-arch: "x64"
             python-version: "3.x" 
-            install-headerfiles : false
+            install-headerfiles: false
           - os: windows-2016
             vs-version: 15
             python-arch: "x86"
             python-version: "2.7.x" 
-            install-headerfiles : false
+            install-headerfiles: false
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@master
