@@ -5,6 +5,8 @@
 
 # libzengithub - how to build portable [conan.io](https://www.conan.io/) C/C++ packages with multiple CIs
 
+Featured in ["DevOps and Dependency Management for Non-Hipsters aka C/C++ programmers"](https://www.youtube.com/watch?v=G598xN6kyH8) talk on SwampUp
+
 ```libzengithub``` prints out a random [Zen of Github](http://ben.balter.com/2015/08/12/the-zen-of-github/) whenever you call its only function.
 
 ```c
