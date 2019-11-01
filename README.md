@@ -1,4 +1,4 @@
-Welcome Volkswagen
+Welcome Volkswagen AG
 [![Build Status](https://github.com/jonico/libzengithub/workflows/Test%20libzengithub%20package%20on%20main%20platforms/badge.svg)
 [![Build Status](https://travis-ci.org/jonico/libzengithub.svg)](https://travis-ci.org/jonico/libzengithub)
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/jonico/libzengithub)](https://ci.appveyor.com/project/jonico/libzengithub)
