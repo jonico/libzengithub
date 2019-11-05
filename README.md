@@ -3,7 +3,7 @@
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/jonico/libzengithub)](https://ci.appveyor.com/project/jonico/libzengithub)
 [![Build Status](https://dev.azure.com/nicolaijohannes/nicolaijohannes/_apis/build/status/jonico.libzengithub?branchName=master)](https://dev.azure.com/nicolaijohannes/nicolaijohannes/_build/latest?definitionId=3&branchName=master)
 
-# libzengithub - how to build portable [conan.io](https://www.conan.io/) C/C++ packages with multiple CIs
+# libzengithub - how to build portable [conan.io](https://www.conan.io/) C/C++ packages with multiple CIs :tada:
 
 ```libzengithub``` prints out a random [Zen of Github](http://ben.balter.com/2015/08/12/the-zen-of-github/) whenever you call its only function.
 
