@@ -8,12 +8,12 @@ jobs:
     steps:
     - name: Hold - Merge pull request
       if:  github.event.action == 'flic-hold'
-        uses: actions/github-script@0.5.0
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            github.pulls.merge({
-              pull_number: 32,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-            })
+      uses: actions/github-script@0.5.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          github.pulls.merge({
+            pull_number: 32,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+          })
