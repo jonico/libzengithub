@@ -1,6 +1,4 @@
 from conan.packager import ConanMultiPackager
-import platform
-
 
 if __name__ == "__main__":
     builder = ConanMultiPackager(remotes=["https://api.bintray.com/conan/bincrafters/public-conan"], build_policy="missing")
