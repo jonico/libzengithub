@@ -5,6 +5,8 @@
 
 # libzengithub - how to build portable [conan.io](https://www.conan.io/) C/C++ packages with multiple CIs
 
+This project has been featured at the SwampUp conference ([talk recording](https://www.youtube.com/watch?v=G598xN6kyH8)) and the Volkswagen Azure Days.
+
 ```libzengithub``` prints out a random [Zen of Github](http://ben.balter.com/2015/08/12/the-zen-of-github/) whenever you call its only function.
 
 ```c
@@ -205,5 +207,10 @@ conan remote add <your conan remote> <conan.io, artifactory or bintray url>
 conan upload ZenGitHub/1.0@jonico/stable --all -r=<your conan remote>
 ```
 
+## :tada: GitHub SlowMerge / Octoplush Incentive :tada:
+
+The first one who creates a PR with a working example on how to build and publish ARM/ARM64 packages for `libzengithub` using [self-hosted runners](https://help.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) is in for a special treat.
+
+![](https://user-images.githubusercontent.com/1872314/75146322-240f8b80-56fb-11ea-970d-e6f9d3fba95e.JPG)
 
 Enjoy :octocat::heart:
