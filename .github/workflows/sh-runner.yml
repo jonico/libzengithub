@@ -8,7 +8,7 @@ jobs:
         os: [ARM64]
         include:
           - os: ARM64
-            python-arch: "aarch64"
+            python-arch: "armv8"
             python-version: "3.6.x" 
             install-headerfiles: false
             prepare-python: true
