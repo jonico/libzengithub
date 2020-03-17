@@ -13,10 +13,11 @@ class ZenGithubConan(ConanFile):
     exports_sources = "zengithub/*"
     requires = "libcurl/7.64.1@bincrafters/stable"
 
+    
     def configure(self):
-        del self.settings.compiler.libcxx
         self.options["openssl"].shared = True
         self.options["openssl"].no_asm = True
+        self.options["openssl"].openssldir = "/dev/null"
 
     def build(self):
         cmake = CMake(self)
