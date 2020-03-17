@@ -15,6 +15,8 @@ class ZenGithubConan(ConanFile):
 
     def configure(self):
         del self.settings.compiler.libcxx
+        self.options["openssl"].shared = True
+        self.options["openssl"].no_asm = True
 
     def build(self):
         cmake = CMake(self)
