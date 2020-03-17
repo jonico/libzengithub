@@ -8,7 +8,7 @@ class ZenGithubConan(ConanFile):
     url = "https://github.com/jonico/libzengithub"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "no_asm": [True, False]}
-    default_options = "shared=False", "no_asm=True"
+    default_options = "shared=True", "no_asm=False"
     generators = "cmake"
     exports_sources = "zengithub/*"
     requires = "libcurl/7.64.1@bincrafters/stable"
