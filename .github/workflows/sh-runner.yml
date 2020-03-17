@@ -1,0 +1,48 @@
+name: Test libzengithub package on main platforms
+on: [push]
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ARM64]
+        include:
+          - os: ARM64
+            python-arch: "aarch64"
+            python-version: "3.6.x" 
+            install-headerfiles: false
+            prepare-python: false
+            gcc-version: "9"
+ 
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@master
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        version: ${{ matrix.python-version }}
+        architecture: ${{ matrix.python-arch }}
+      if: matrix.prepare-python
+    - name: Install C and C++ header files
+      run: |
+        sudo apt-get update && sudo apt-get install -y gcc-multilib
+      if: matrix.install-headerfiles
+    - name: Install conan && conan package tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install --user conan
+        pip install --user conan_package_tools
+    - name: Generating conan user directory and building the solution
+      run: |
+        conan user
+        python build.py
+      env:
+        CONAN_REFERENCE: "ZenGitHub/1.0"
+        CONAN_USERNAME: "jonico"
+        CONAN_LOGIN_USERNAME: "jonico"
+        CONAN_CHANNEL: "stable"
+        CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
+        CONAN_STABLE_BRANCH_PATTERN: "release/*"
+        CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
+        CONAN_APPLE_CLANG_VERSIONS: "11.0"
+        CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
