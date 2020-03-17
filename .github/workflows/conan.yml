@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: info
+    - name: os info
       run: uname -m
     - name: conan install
       run: conan install ZenGitHub/1.0@jonico/stable --build missing
