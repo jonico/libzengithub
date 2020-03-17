@@ -11,7 +11,7 @@ jobs:
             python-arch: "aarch64"
             python-version: "3.6.x" 
             install-headerfiles: false
-            prepare-python: false
+            prepare-python: true
             gcc-version: "9"
  
     runs-on: ${{ matrix.os }}
