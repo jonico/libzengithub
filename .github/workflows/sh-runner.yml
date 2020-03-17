@@ -1,5 +1,5 @@
 name: Test libzengithub package on main platforms
-on: [push]
+on: [package]
 jobs:
   test:
     strategy:
