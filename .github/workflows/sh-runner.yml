@@ -8,11 +8,12 @@ jobs:
         os: [ARM64]
         include:
           - os: ARM64
-            python-arch: "armv8"
+            python-arch: "aarch64"
+            conan-arch: "armv8"
             python-version: "3.6.x" 
             install-headerfiles: false
-            prepare-python: true
-            gcc-version: "9"
+            prepare-python: false
+            gcc-version: "9.2"
  
     runs-on: ${{ matrix.os }}
     steps:
@@ -35,6 +36,7 @@ jobs:
     - name: Generating conan user directory and building the solution
       run: |
         conan user
+        env
         python build.py
       env:
         CONAN_REFERENCE: "ZenGitHub/1.0"
@@ -46,3 +48,4 @@ jobs:
         CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
         CONAN_APPLE_CLANG_VERSIONS: "11.0"
         CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
+        CONAN_ARCHS: ${{ matrix.conan-arch }}
