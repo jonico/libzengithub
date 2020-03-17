@@ -1,5 +1,5 @@
 name: Test libzengithub package on main platforms
-on: [package]
+on: [push]
 jobs:
   test:
     strategy:
@@ -13,7 +13,7 @@ jobs:
             python-version: "3.6.x" 
             install-headerfiles: false
             prepare-python: false
-            gcc-version: "9.2"
+            gcc-version: "9"
  
     runs-on: ${{ matrix.os }}
     steps:
@@ -36,7 +36,6 @@ jobs:
     - name: Generating conan user directory and building the solution
       run: |
         conan user
-        env
         python build.py
       env:
         CONAN_REFERENCE: "ZenGitHub/1.0"
