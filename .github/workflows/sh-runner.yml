@@ -5,8 +5,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ARM64]
+        os: [ARM, ARM64]
         include:
+          - os: ARM
+            python-arch: "arm"
+            conan-arch: "armv7"
+            python-version: "3.6.x" 
+            install-headerfiles: false
+            prepare-python: false
+            gcc-version: "9"
           - os: ARM64
             python-arch: "aarch64"
             conan-arch: "armv8"
