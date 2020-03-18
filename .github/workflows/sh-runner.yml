@@ -25,6 +25,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@master
+    - name: test
+      run: |
+        type pip
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
