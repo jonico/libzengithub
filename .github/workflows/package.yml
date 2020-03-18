@@ -39,7 +39,7 @@ jobs:
           - os: ARM
             conan-arch: "armv7"
             python-version: "3.6.x" 
-            install-headerfiles: true
+            install-headerfiles: false
             prepare-python: false
             gcc-version: "9"
           - os: ARM64
