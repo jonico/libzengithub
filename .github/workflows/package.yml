@@ -11,26 +11,31 @@ jobs:
             python-arch: "x64"
             python-version: "3.6.x" 
             install-headerfiles: true
+            prepare-python: true
             gcc-version: "5"
           - os: ubuntu-18.04
             python-arch: "x64"
             python-version: "3.6.x" 
             install-headerfiles: true
+            prepare-python: true
             gcc-version: "7"
           - os: macOS-10.14
             python-arch: "x64"
             python-version: "3.6.x" 
             install-headerfiles: false
+            prepare-python: true
           - os: windows-2016
             vs-version: 15
             python-arch: "x86"
             python-version: "2.7.x" 
             install-headerfiles: false
+            prepare-python: true
           - os: windows-2019
             vs-version: 16
             python-arch: "x86"
             python-version: "3.6.x" 
             install-headerfiles: false
+            prepare-python: true
           - os: ARM
             python-arch: "armv7"
             python-version: "3.6.x" 

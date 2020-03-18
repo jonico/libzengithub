@@ -7,16 +7,14 @@ class ZenGithubConan(ConanFile):
     license = "Apache 2.0"
     url = "https://github.com/jonico/libzengithub"
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = "shared=False", "fPIC=True"
+    options = {"shared": [True, False]}
+    default_options = "shared=False"
     generators = "cmake"
     exports_sources = "zengithub/*"
     requires = "libcurl/7.64.1@bincrafters/stable"
-    
+
     def configure(self):
-        self.options["openssl"].shared = True
-        self.options["openssl"].no_asm = True
-        self.options["openssl"].openssldir = "/dev/null"
+        del self.settings.compiler.libcxx
 
     def build(self):
         cmake = CMake(self)
