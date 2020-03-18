@@ -69,6 +69,7 @@ jobs:
         pip install conan_package_tools
     - name: Generating conan user directory and building the solution
       run: |
+        if [ ! -e ${ARM_ARCH} ]; then export CONAN_ARCHS=${ARM_ARCH}; fi
         conan user
         python build.py
       env:
@@ -81,4 +82,5 @@ jobs:
         CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
         CONAN_APPLE_CLANG_VERSIONS: "11.0"
         CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
+        ARM_ARCH: ${{ matrix.conan-arch }}
 
