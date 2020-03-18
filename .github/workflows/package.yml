@@ -1,11 +1,11 @@
 name: Test libzengithub package on main platforms
-on: [pull_request]
+on: [push]
 jobs:
   test:
     strategy:
       fail-fast: false
       matrix:
-        os: [macOS-10.14, windows-2016, windows-2019, ubuntu-16.04, ubuntu-18.04]
+        os: [macOS-10.14, windows-2016, windows-2019, ubuntu-16.04, ubuntu-18.04, ARM, ARM64]
         include:
           - os: ubuntu-16.04
             python-arch: "x64"
@@ -31,6 +31,18 @@ jobs:
             python-arch: "x86"
             python-version: "3.6.x" 
             install-headerfiles: false
+          - os: ARM
+            python-arch: "armv7"
+            python-version: "3.6.x" 
+            install-headerfiles: false
+            prepare-python: false
+            gcc-version: "9"
+          - os: ARM64
+            python-arch: "armv8"
+            python-version: "3.6.x" 
+            install-headerfiles: false
+            prepare-python: false
+            gcc-version: "9"
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -40,6 +52,7 @@ jobs:
       with:
         version: ${{ matrix.python-version }}
         architecture: ${{ matrix.python-arch }}
+      if: matrix.prepare-python
     - name: Install C and C++ header files
       run: |
         sudo apt-get update && sudo apt-get install -y gcc-multilib
@@ -63,3 +76,4 @@ jobs:
         CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
         CONAN_APPLE_CLANG_VERSIONS: "11.0"
         CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
+        CONAN_ARCHS: ${{ matrix.python-arch }}
