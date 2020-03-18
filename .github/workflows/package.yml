@@ -81,7 +81,7 @@ jobs:
         CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
         CONAN_APPLE_CLANG_VERSIONS: "11.0"
         CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
-      if: startsWith(matrix.python-arch, "arm") != true
+      if: startsWith(matrix.python-arch, 'arm') != true
     - name: Generating conan user directory and building the solution
       run: |
         conan user
@@ -97,4 +97,4 @@ jobs:
         CONAN_APPLE_CLANG_VERSIONS: "11.0"
         CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
         CONAN_ARCHS: ${{ matrix.conan-arch }}
-      if: startsWith(matrix.python-arch, "arm")
+      if: startsWith(matrix.python-arch, 'arm')
