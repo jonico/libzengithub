@@ -69,7 +69,8 @@ jobs:
         pip install conan_package_tools
     - name: ARM hotfix
       run: |
-        conan remove -f "ZenGitHub*"
+        conan remove "ZenGitHub*" --force 
+        conan remove "ZenGitHub*" --builds --force
         echo "::set-env name=CONAN_ARCHS::${{ matrix.python-arch }}"
       if: startsWith(matrix.python-arch, 'arm')
     - name: Generating conan user directory and building the solution
