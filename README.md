@@ -209,6 +209,8 @@ conan upload ZenGitHub/1.0@jonico/stable --all -r=<your conan remote>
 
 ## :tada: GitHub SlowMerge / Octoplush Incentive :tada:
 
+### We have a [winner](https://github.com/jonico/libzengithub/pull/34) :tada:
+
 The first one who creates a PR with a working example on how to build and publish ARM/ARM64 packages for `libzengithub` using [self-hosted runners](https://help.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) is in for a special treat.
 
 ![](https://user-images.githubusercontent.com/1872314/75146322-240f8b80-56fb-11ea-970d-e6f9d3fba95e.JPG)
