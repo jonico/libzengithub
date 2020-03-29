@@ -73,8 +73,7 @@ jobs:
       if: startsWith(matrix.python-arch, 'arm')
     - name: Generating conan user directory and building the solution
       run: |
-        conan remote add conan https://api.bintray.com/conan/conan-jonico/libzengithub
-        conan user jonico -r conan -p
+        conan user
         python build.py
       env:
         CONAN_REFERENCE: "ZenGitHub/1.0"
