@@ -71,6 +71,7 @@ jobs:
       run: |
         conan remove "ZenGitHub*" --builds --force
         conan remove "ZenGitHub*" --packages --force
+        conan remove "ZenGitHub*" --src --force
         conan remove "ZenGitHub*" --force 
         echo "::set-env name=CONAN_ARCHS::${{ matrix.python-arch }}"
       if: startsWith(matrix.python-arch, 'arm')
