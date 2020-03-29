@@ -67,34 +67,21 @@ jobs:
         python -m pip install --upgrade pip
         pip install conan
         pip install conan_package_tools
-    - name: Generating conan user directory and building the solution
+    - name: ARM hotfix
       run: |
-        conan user
-        python build.py
-      env:
-        CONAN_REFERENCE: "ZenGitHub/1.0"
-        CONAN_USERNAME: "jonico"
-        CONAN_LOGIN_USERNAME: "jonico"
-        CONAN_CHANNEL: "stable"
-        CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
-        CONAN_STABLE_BRANCH_PATTERN: "release/*"
-        CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
-        CONAN_APPLE_CLANG_VERSIONS: "11.0"
-        CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
-      if: startsWith(matrix.python-arch, 'arm') != true
-    - name: Generating conan user directory and building the solution
-      run: |
-        conan user
-        python build.py
-      env:
-        CONAN_REFERENCE: "ZenGitHub/1.0"
-        CONAN_USERNAME: "jonico"
-        CONAN_LOGIN_USERNAME: "jonico"
-        CONAN_CHANNEL: "stable"
-        CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
-        CONAN_STABLE_BRANCH_PATTERN: "release/*"
-        CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
-        CONAN_APPLE_CLANG_VERSIONS: "11.0"
-        CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
-        CONAN_ARCHS: ${{ matrix.python-arch }}
+        echo "::set-env name=CONAN_ARCHS::${{ matrix.python-arch }}"
       if: startsWith(matrix.python-arch, 'arm')
+    - name: Generating conan user directory and building the solution
+      run: |
+        conan user
+        python build.py
+      env:
+        CONAN_REFERENCE: "ZenGitHub/1.0"
+        CONAN_USERNAME: "jonico"
+        CONAN_LOGIN_USERNAME: "jonico"
+        CONAN_CHANNEL: "stable"
+        CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
+        CONAN_STABLE_BRANCH_PATTERN: "release/*"
+        CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
+        CONAN_APPLE_CLANG_VERSIONS: "11.0"
+        CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
