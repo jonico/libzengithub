@@ -70,6 +70,7 @@ jobs:
     - name: ARM hotfix
       run: |
         echo "::set-env name=CONAN_ARCHS::${{ matrix.python-arch }}"
+        conan remove *ZenGitHub* --packages
       if: startsWith(matrix.python-arch, 'arm')
     - name: Generating conan user directory and building the solution
       run: |
