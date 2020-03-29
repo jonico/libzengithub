@@ -79,7 +79,7 @@ jobs:
       env:
         CONAN_REFERENCE: "ZenGitHub/1.0"
         CONAN_USERNAME: "jonico"
-        CONAN_PASSWORD: "{{secrets.CONAN_PASSWORD}}"  
+        CONAN_PASSWORD: ${{ secrets.CONAN_PASSWORD }} 
         CONAN_LOGIN_USERNAME: "jonico"
         CONAN_CHANNEL: "stable"
         CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
