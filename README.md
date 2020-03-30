@@ -1,5 +1,5 @@
 ![Build Status](https://github.com/jonico/libzengithub/workflows/Test%20libzengithub%20package%20on%20main%20platforms/badge.svg)
-![Build Status](https://travis-ci.org/jonico/libzengithub.svg)]
+![Build Status](https://travis-ci.org/jonico/libzengithub.svg)
 ![Build Status](https://dev.azure.com/nicolaijohannes/nicolaijohannes/_apis/build/status/jonico.libzengithub?branchName=master)
 
 # libzengithub - how to build portable [conan.io](https://www.conan.io/) C/C++ packages with multiple CIs
