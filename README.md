@@ -153,7 +153,7 @@ conan search ZenGitHub/1.0@jonico/stable -r=conan --table build_matrix.html
 open build_matrix.html
 ```
 
-![image](https://user-images.githubusercontent.com/1872314/28708619-246fbe24-737d-11e7-92f1-ac8d5e149756.png)
+![image](https://user-images.githubusercontent.com/1872314/77851848-8d435c80-71db-11ea-8ca9-d2fcab20191b.png)
 
 
 # Building, testing and installing locally
