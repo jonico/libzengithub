@@ -2,7 +2,7 @@
 ![Build Status](https://travis-ci.org/jonico/libzengithub.svg)
 ![Build Status](https://dev.azure.com/nicolaijohannes/nicolaijohannes/_apis/build/status/jonico.libzengithub?branchName=master)
 
-# libzengithub - how to build portable [conan.io](https://www.conan.io/) C/C++ packages with multiple CIs
+# libzengithub - how to build portable [conan.io](https://www.conan.io/) C/C++ packages with multiple CIs :tada:
 
 This project has been featured at the SwampUp conference ([talk recording](https://www.youtube.com/watch?v=G598xN6kyH8)) and the Volkswagen Azure Days.
 
