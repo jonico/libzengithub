@@ -5,7 +5,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macOS-10.14, windows-2016, windows-2019, ubuntu-16.04, ubuntu-18.04, ARM, ARM64]
+        os: [macOS-10.15, windows-2016, windows-2019, ubuntu-16.04, ubuntu-18.04, ARM, ARM64]
         include:
           - os: ubuntu-16.04
             python-arch: "x64"
@@ -19,7 +19,7 @@ jobs:
             install-headerfiles: true
             prepare-python: true
             gcc-version: "7"
-          - os: macOS-10.14
+          - os: macOS-10.15
             python-arch: "x64"
             python-version: "3.6.x" 
             install-headerfiles: false
@@ -55,7 +55,7 @@ jobs:
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
-        version: ${{ matrix.python-version }}
+        python-version: ${{ matrix.python-version }}
         architecture: ${{ matrix.python-arch }}
       if: matrix.prepare-python
     - name: Install C and C++ header files
