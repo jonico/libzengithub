@@ -1,6 +1,5 @@
 ![Build Status](https://github.com/jonico/libzengithub/workflows/Test%20libzengithub%20package%20on%20main%20platforms/badge.svg)
-![Build Status](https://travis-ci.org/jonico/libzengithub.svg)
-![Build Status](https://dev.azure.com/nicolaijohannes/nicolaijohannes/_apis/build/status/jonico.libzengithub?branchName=master)
+
 
 # libzengithub - how to build portable [conan.io](https://www.conan.io/) C/C++ packages with multiple CI platforms
 
@@ -89,7 +88,7 @@ First, [install](http://docs.conan.io/en/latest/installation.html) the conan.io 
 Then, add the remote to [my conan.io repo](https://api.bintray.com/conan/conan-jonico/libzengithub):
 
 ```
-conan remote add conan-jonico https://api.bintray.com/conan/conan-jonico/libzengithub
+conan remote add conan-jonico https://jonico.jfrog.io/artifactory/api/conan/libzengithub-conan
 ```
 
 Now, you can install the library:
