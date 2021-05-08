@@ -83,10 +83,10 @@ jobs:
         CONAN_REFERENCE: "ZenGitHub/1.0"
         CONAN_USERNAME: "jonico"
         CONAN_PASSWORD: ${{ secrets.CONAN_PASSWORD }} 
-        CONAN_LOGIN_USERNAME: "jonico"
+        CONAN_LOGIN_USERNAME: "jonico@github.com"
         CONAN_CHANNEL: "stable"
-        CONAN_UPLOAD: "https://api.bintray.com/conan/conan-jonico/libzengithub"
+        CONAN_UPLOAD: "https://jonico.jfrog.io/artifactory/api/conan/libzengithub-conan-local"
         CONAN_STABLE_BRANCH_PATTERN: "release/*"
         CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
-        CONAN_APPLE_CLANG_VERSIONS: "11.0"
+        CONAN_APPLE_CLANG_VERSIONS: "12.0"
         CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
