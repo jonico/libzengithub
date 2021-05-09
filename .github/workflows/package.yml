@@ -35,13 +35,13 @@ jobs:
             python-version: "3.6.x" 
             install-headerfiles: false
             prepare-python: false
-            gcc-version: "9"
+            gcc-version: "8"
           - os: ARM64
             python-arch: "armv8"
             python-version: "3.6.x" 
             install-headerfiles: false
             prepare-python: false
-            gcc-version: "9"
+            gcc-version: "8"
 
     runs-on: ${{ matrix.os }}
     steps:
