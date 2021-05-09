@@ -140,7 +140,12 @@ Project setup installs the library (and all his dependencies) and generates the 
 
 I was following https://github.com/conan-io/conan-package-tools to provide a range of different operating system, compiler version, debug and release builds for this library.
 
-I am using [Travis CI](https://github.com/jonico/libzengithub/blob/master/.travis.yml) for Linux and Mac builds and [AppVeyor](https://github.com/jonico/libzengithub/blob/master/appveyor.yml) for Windows builds and [Azure Pipelines](https://dev.azure.com/nicolaijohannes/nicolaijohannes/_build?definitionId=3&_a=summary) for Windows, Linux and Mac.
+<strike>I am using [Travis CI](https://github.com/jonico/libzengithub/blob/master/.travis.yml) for Linux and Mac builds and [AppVeyor](https://github.com/jonico/libzengithub/blob/master/appveyor.yml) for Windows builds and [Azure Pipelines](https://dev.azure.com/nicolaijohannes/nicolaijohannes/_build?definitionId=3&_a=summary) for Windows, Linux and Mac.</strike>
+
+I am now using GitHub Actions for all builds as it supports all hardware configurations :point_up: with [one config file](https://github.com/jonico/libzengithub/blob/master/.github/workflows/package.yml).
+
+![image](https://user-images.githubusercontent.com/1872314/117568074-08ee2900-b0bf-11eb-8d24-f04186103b68.png)
+
 
 I had to exclude certain platforms as ```libcurl``` and OpenSSL packages were not built for all possible mutations. Packages are uploaded to https://jonico.jfrog.io/artifactory/api/conan/libzengithub-conan
 
