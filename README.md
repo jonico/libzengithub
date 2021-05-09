@@ -142,7 +142,7 @@ I was following https://github.com/conan-io/conan-package-tools to provide a ran
 
 I am using [Travis CI](https://github.com/jonico/libzengithub/blob/master/.travis.yml) for Linux and Mac builds and [AppVeyor](https://github.com/jonico/libzengithub/blob/master/appveyor.yml) for Windows builds and [Azure Pipelines](https://dev.azure.com/nicolaijohannes/nicolaijohannes/_build?definitionId=3&_a=summary) for Windows, Linux and Mac.
 
-I had to exclude certain platforms as ```libcurl``` and OpenSSL packages were not built for all possible mutations. Packages are uploaded to https://api.bintray.com/conan/conan-jonico/libzengithub
+I had to exclude certain platforms as ```libcurl``` and OpenSSL packages were not built for all possible mutations. Packages are uploaded to https://jonico.jfrog.io/artifactory/api/conan/libzengithub-conan
 
 Here are the results:
 
