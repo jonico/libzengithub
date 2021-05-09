@@ -59,11 +59,11 @@ class ZenGithubConan(ConanFile):
     license = "Apache 2.0"
     url = "https://github.com/jonico/libzengithub"
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False]}
-    default_options = "shared=False"
+    options = {"shared": [True, False], "fPIC": [True, False]}
+    default_options = {"shared": False, "fPIC": True}
     generators = "cmake"
     exports_sources = "zengithub/*"
-    requires = "libcurl/7.50.3@bincrafters/stable"
+    requires = "libcurl/7.75.0"
 ...
 ```
 
@@ -74,7 +74,7 @@ conan info . --graph deps.html
 open deps.html
 ```
 
-![image](https://user-images.githubusercontent.com/1872314/38522318-7e0c76a4-3c48-11e8-90f3-5ac2f6533a94.png)
+![image](https://user-images.githubusercontent.com/1872314/117568339-fe805f00-b0bf-11eb-9a86-13dc9f972b3d.png)
 
 and automatically downloads the packages it depends upon from the conan repository. If it should find pre-built packages for the dependencies, it will build them locally.
 
@@ -85,7 +85,7 @@ See [zenofgithub](https://github.com/jonico/zenofgithub) for an example applicat
 ## Basic setup
 
 First, [install](http://docs.conan.io/en/latest/installation.html) the conan.io package manager locally.
-Then, add the remote to [my conan.io repo](https://api.bintray.com/conan/conan-jonico/libzengithub):
+Then, add the remote to [my conan.io repo](https://jonico.jfrog.io/artifactory/api/conan/libzengithub-conan):
 
 ```
 conan remote add conan-jonico https://jonico.jfrog.io/artifactory/api/conan/libzengithub-conan
@@ -156,7 +156,7 @@ conan search ZenGitHub/1.0@jonico/stable -r=conan --table build_matrix.html
 open build_matrix.html
 ```
 
-![image](https://user-images.githubusercontent.com/1872314/77851848-8d435c80-71db-11ea-8ca9-d2fcab20191b.png)
+![image](https://user-images.githubusercontent.com/1872314/117568251-95005080-b0bf-11eb-832f-0563cd280bd4.png)
 
 
 # Building, testing and installing locally
