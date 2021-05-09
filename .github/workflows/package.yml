@@ -54,13 +54,13 @@ jobs:
       if: matrix.prepare-python
     - name: Install C and C++ header files
       run: |
-        sudo apt-get update && sudo apt-get install -y gcc-multilib
+        sudo apt-get update && sudo apt-get install -y gcc-multilib g++-multilib
       if: matrix.install-headerfiles
     - name: Install conan && conan package tools
       run: |
-        python3 -m pip install --upgrade pip
-        pip3 install conan
-        pip3 install conan_package_tools
+        python -m pip install --upgrade pip
+        pip install conan
+        pip install conan_package_tools
     - name: ARM hotfix
       run: |
         conan remove "ZenGitHub*" --builds --force
@@ -72,7 +72,7 @@ jobs:
     - name: Generating conan user directory and building the solution
       run: |
         conan user
-        python3 build.py
+        python build.py
       env:
         CONAN_REFERENCE: "ZenGitHub/1.0"
         CONAN_USERNAME: "jonico"
