@@ -13,12 +13,12 @@ jobs:
             install-headerfiles: true
             prepare-python: true
             gcc-version: "5"
-          - os: ubuntu-18.04
+          - os: ubuntu-20.04
             python-arch: "x64"
             python-version: "3.6.x" 
             install-headerfiles: true
             prepare-python: true
-            gcc-version: "7"
+            gcc-version: "9"
           - os: macOS-10.15
             python-arch: "x64"
             python-version: "3.6.x" 
