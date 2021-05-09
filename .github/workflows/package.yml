@@ -5,7 +5,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macOS-10.15, windows-2016, windows-2019, ubuntu-16.04, ubuntu-18.04, ARM, ARM64]
+        os: [macOS-10.15, windows-2019, ubuntu-16.04, ubuntu-18.04, ARM, ARM64]
         include:
           - os: ubuntu-16.04
             python-arch: "x64"
@@ -22,12 +22,6 @@ jobs:
           - os: macOS-10.15
             python-arch: "x64"
             python-version: "3.6.x" 
-            install-headerfiles: false
-            prepare-python: true
-          - os: windows-2016
-            vs-version: 15
-            python-arch: "x86"
-            python-version: "2.7.x" 
             install-headerfiles: false
             prepare-python: true
           - os: windows-2019
@@ -78,7 +72,7 @@ jobs:
     - name: Generating conan user directory and building the solution
       run: |
         conan user
-        python build.py
+        python3 build.py
       env:
         CONAN_REFERENCE: "ZenGitHub/1.0"
         CONAN_USERNAME: "jonico"
