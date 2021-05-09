@@ -84,3 +84,4 @@ jobs:
         CONAN_VISUAL_VERSIONS: ${{ matrix.vs-version }}
         CONAN_APPLE_CLANG_VERSIONS: "12.0"
         CONAN_GCC_VERSIONS: ${{ matrix.gcc-version }}
+        CONAN_PIP_COMMAND: pip3
